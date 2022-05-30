@@ -36,7 +36,7 @@ def sumy_summarizer(docx):
 def app():
 
     st.write("""
-    # Translation (text to speech)
+    # Text to Speech(Audio)
     There are several APIs available to convert text to speech in Python. 
     One of such APIs is the Google Text to Speech API commonly known as the gTTS API.
 
@@ -50,9 +50,9 @@ def app():
 
     langs = {
         'English': 'en',
-        'French': 'fr',
-        'Portuguese': 'pt',
-        'Spanish': 'es'
+        'हिंदी': 'hi',
+        'मराठी': 'en',
+        'Spanish': 'en'
     }
 
     # model = {
@@ -82,7 +82,7 @@ def app():
             
             filename_translated = "translation.mp3"
             
-            translation_lang = st.selectbox('Choose translation language', help='Choose the language you want to translate the speech to', options=page_names)
+            translation_lang = st.selectbox('Choose Speech language', help='Choose the language you want to listen to speech', options=page_names)
             full_lang = translation_lang
             translation_lang = langs[translation_lang]
 
@@ -93,33 +93,5 @@ def app():
         st.success(f"{text}")
         audio_created = save_audio(text, language, slow_audio_speed, filename)
         read_audio(filename)
-        
-        #Translation
-        if st.button(f"Translate in {full_lang}"):
-            translator = google_translator()
-            text_output = translator.translate(text, lang_tgt=translation_lang)
-            st.success(text_output)
-            save_audio(text_output, translation_lang, slow_audio_speed, filename_translated)
-            read_audio(filename_translated)
-
-        # # Tokenize
-        # if st.button("Tokenize"):
-        #     docx = nlp(text)
-        #     spacy_streamlit.visualize_tokens(docx, attrs=['text', 'pos_', 'dep_', 'ent_type_'])
-
-        # # NER
-        # if st.button("Named Entity Recognition"):
-        #     docx = nlp(text)
-        #     spacy_streamlit.visualize_ner(docx, labels=nlp.get_pipe('ner').labels)
-
-        # Text Summarization
-        if st.button("Summarize"):
-            st.text("Using Sumy..")
-            summary_result = sumy_summarizer(text)
-
-            st.success(summary_result)
-            filename = 'summarized.wav'
-            audio_created = save_audio(summary_result, language, slow_audio_speed, filename)
-            read_audio(filename)
 
         
