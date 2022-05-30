@@ -20,3 +20,4 @@ class Multiapp:
         
 
         app['function']()
+        
