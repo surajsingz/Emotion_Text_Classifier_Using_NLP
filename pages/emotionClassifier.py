@@ -33,7 +33,7 @@ def app():
     st.markdown("""
     # Emotion text classification
     
-    According to the discrete basic emotion description approach, emotions can be classified into six basic emotions: sadness, joy, surprise, anger, disgust, and fear _(van den Broek, 2013)_
+    According to the discrete basic emotion description approach, emotions can be classified into six basic emotions: sadness, joy, surprise, anger, disgust, and fear
     """)
 
     with st.form(key='emotion_clf_form'):
@@ -132,18 +132,6 @@ def app():
 
                 d_pie = {'Emotion': st.session_state.emotions, 'Occurence': st.session_state.occurence}
                 df_pie = pd.DataFrame(d_pie)
-                # st.write("Emotion Occurence")
-                # st.write(df_pie)
-
-
-                # df_occur = {'Emotion': prdcts, 'Occurence': occur['Emotion']}
-                # st.write(df_occur)
-
-                
-
-                # Line chart
-                # c = alt.Chart(df).mark_line().encode(x='Date',y='Probability')
-                # st.altair_chart(c)
 
                 
 
@@ -167,6 +155,3 @@ def app():
 
         else:
             st.write("No text has been submitted!")
-            
-        
-            
