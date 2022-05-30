@@ -4,7 +4,7 @@ from PIL import Image
 def app():
     st.markdown("""
 
-    # PROJECT PHASE - I
+    # PROJECT PHASE - II
 
     ## Emotion text Classification using NLP and Machine Learning
 
@@ -24,9 +24,10 @@ def app():
     st.markdown("""
     ## Find Us
     ##### Suraj Singh  ( https://github.com/surajsingz )
-    ##### Vaibhav Sontakke  ( https://github.com/justinvibhu )
-    ##### Abhishek Thakare  ( https://github.com/Abhishekt07 )
     ##### Prasad Sonje  ( https://github.com/sonje123 )
+    ##### Abhishek Thakare  ( https://github.com/Abhishekt07 )
+    ##### Vaibhav Sontakke  ( https://github.com/justinvibhu )
+    
    
 
     """)
