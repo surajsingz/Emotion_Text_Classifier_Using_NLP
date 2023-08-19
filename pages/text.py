@@ -46,7 +46,7 @@ def app():
     image = Image.open('images/text-to-speech.png')
     st.image(image)
 
-    # Radion button (Language choice)
+
 
     langs = {
         'English': 'en',
